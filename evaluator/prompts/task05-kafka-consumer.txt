@@ -1,0 +1,51 @@
+Create a complete runnable application using Java 21, Spring Boot 4.0.8 and Maven.
+Include all files required to compile and run the application.
+Use DTOs, validation, services, repositories, controllers and appropriate exception handling.
+Include automated tests for the primary functional requirements.
+Do not replace code with placeholders. Return the complete project implementation.
+
+TASK 5 — Kafka Payment Consumer
+
+Use Spring Kafka. Kafka bootstrap servers must be externally configurable.
+Consume JSON messages from topic `payment-events`.
+
+Event:
+{"eventId":"abc123","paymentId":10,"status":"SUCCESS"}
+
+Implement:
+POST /api/payments
+Request: {"status":"PENDING"}
+Return the created payment including its id.
+
+GET /api/payments/{id}
+Return current payment status.
+
+GET /api/payments/{id}/events
+Return the stored audit events for that payment, including eventId.
+
+Requirements:
+- receiving an event updates the payment status
+- every processed event is recorded for audit
+- the same eventId may be delivered more than once but business processing and audit persistence must occur only once
+- malformed messages or temporary failures must not permanently stop processing of later valid messages
+- handle retry/error behavior appropriately
+
+OUTPUT FORMAT REQUIREMENT
+
+Return only the generated project files. For every file, print the exact relative file path followed by its complete contents in a fenced code block.
+
+Example:
+
+FILE: pom.xml
+```xml
+...complete file...
+```
+
+FILE: src/main/java/com/example/Application.java
+```java
+...complete file...
+```
+
+Do not include architecture explanations, prose commentary, summaries, setup tutorials, or omitted sections.
+Do not use placeholders such as "same as above", "...", or "implementation here".
+Do not wrap the entire answer in one outer Markdown code block.

@@ -1,0 +1,7 @@
+**/target/
+generated/*/
+!generated/.gitkeep
+results/*.csv
+!results/pilot-results.csv
+.env
+*.key

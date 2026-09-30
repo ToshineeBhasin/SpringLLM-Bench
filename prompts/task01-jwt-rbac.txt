@@ -1,0 +1,99 @@
+TASK 1 — JWT Authentication and Role-Based Authorization
+
+Create a complete, runnable REST API using Java 21, Spring Boot 4.0.8, Maven, Spring Security, Spring Data JPA, and H2 Database.
+
+The application manages users and implements JWT-based authentication and role-based authorization.
+
+Functional requirements:
+
+1. A user has:
+   - id
+   - email
+   - password
+   - role
+
+2. Supported roles:
+   - USER
+   - ADMIN
+
+3. Endpoints:
+
+POST /api/auth/register
+
+Request:
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+
+A newly registered user must automatically receive the USER role.
+
+POST /api/auth/login
+
+Request:
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+
+On successful authentication, return a JWT access token.
+
+GET /api/user/profile
+
+This endpoint must only be accessible to authenticated users.
+
+GET /api/admin/users
+
+This endpoint must only be accessible to users with the ADMIN role and should return the list of registered users.
+
+4. Authentication must be stateless. Subsequent authenticated requests use:
+   Authorization: Bearer <JWT>
+
+5. Duplicate email registration must be rejected.
+
+6. Invalid login credentials must return an appropriate HTTP error.
+
+7. Unauthenticated access to a protected endpoint must be rejected.
+
+8. A USER must not be able to access the ADMIN endpoint.
+
+9. Use DTOs for API requests/responses rather than exposing persistence entities directly.
+
+10. Validate incoming API requests.
+
+11. Include global exception handling for appropriate API errors.
+
+12. Include all files required to compile and run:
+    - pom.xml
+    - application configuration
+    - entities
+    - DTOs
+    - repositories
+    - services
+    - controllers
+    - Spring Security configuration
+    - JWT implementation
+
+13. Include automated tests for the primary functional requirements.
+
+Return the complete project implementation. Do not replace code with placeholders or comments such as "implementation here".
+
+OUTPUT FORMAT REQUIREMENT
+
+Return only the generated project files. For every file, print the exact relative file path followed by its complete contents in a fenced code block.
+
+Example:
+
+FILE: pom.xml
+```xml
+...complete file...
+```
+
+FILE: src/main/java/com/example/Application.java
+```java
+...complete file...
+```
+
+Do not include architecture explanations, prose commentary, summaries, setup tutorials, or omitted sections.
+Do not use placeholders such as "same as above", "...", or "implementation here".
+Do not wrap the entire answer in one outer Markdown code block.
