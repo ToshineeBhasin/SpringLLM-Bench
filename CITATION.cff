@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "SpringLLM-Bench"
+version: "1.0.5"
+type: software
+
+authors:
+  - given-names: "Toshinee"
+    family-names: "Bhasin"
+    affiliation: "P.E.S. Modern College of Engineering, Pune, Maharashtra, India"
+
+abstract: >
+  SpringLLM-Bench is a framework-aware benchmark and evaluation suite for
+  assessing security, reliability, build success, startup behavior, and
+  functional correctness in LLM-generated Spring Boot applications.
+  The pilot artifact contains five enterprise-oriented benchmark tasks,
+  three evaluated LLMs, three generations per model-task cell, and
+  45 frozen generated applications.
+
+keywords:
+  - Large Language Models
+  - Code Generation
+  - Spring Boot
+  - Java
+  - Software Security
+  - Software Reliability
+  - Static Analysis
+  - Framework-Aware Testing
+  - Empirical Software Engineering
+
+repository-code: "https://github.com/ToshineeBhasin/SpringLLM-Bench"
+url: "https://github.com/ToshineeBhasin/SpringLLM-Bench"
+license: "MIT"
